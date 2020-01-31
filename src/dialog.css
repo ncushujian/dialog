@@ -1,0 +1,138 @@
+.dialog_wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(0, 4, 28, 0.8);
+}
+
+.dialog_animate {
+  height: 100%;
+}
+
+.dialog_animate.enter {
+  -webkit-animation: dialog_enter .2s linear 0s 1 normal both;
+  animation: dialog_enter .2s linear 0s 1 normal both;
+}
+
+.dialog_animate.leave {
+  -webkit-animation: dialog_leave .2s linear 0s 1 normal both;
+  animation: dialog_leave .2s linear 0s 1 normal both;
+}
+
+.dialog_panel {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  width: 72%;
+  max-height: 90%;
+  text-align: center;
+  border-radius: 12px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.dialog_panel .dialog_title {
+  margin: 0;
+  padding: 30px 15px 0;
+  color: #43240A;
+  font-size: 17px;
+}
+
+.dialog_panel .dialog_content {
+  margin: 4px 0 32px;
+  padding: 0 15px;
+  color: #585055;
+  font-size: 14px;
+  overflow-y: auto;
+}
+
+.dialog_panel .btn_group {
+  height: 50px;
+  min-height: 50px;
+  font-size: 0;
+}
+
+.dialog_panel .btn_confirm, .dialog_panel .btn_cancel {
+  border-top: 1px solid #e1e0e1;
+  width: 50%;
+  height: 100%;
+  outline: none;
+  border: transparent;
+}
+
+.dialog_panel .btn_confirm {
+  color: #fff;
+  font-size: 14px;
+  background-color: #4883f4;
+}
+
+.dialog_panel .btn_cancel {
+  font-size: 14px;
+  background-color: #F6F9FA;
+}
+
+@-webkit-keyframes dialog_enter {
+  0% {
+    -webkit-transform: scale(.2, .2);
+    transform: scale(.2, .2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@keyframes dialog_enter {
+  0% {
+    -webkit-transform: scale(.2, .2);
+    transform: scale(.2, .2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes dialog_leave {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes dialog_leave {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 352px) {
+  .dialog_panel {
+    width: 270px;
+  }
+}
