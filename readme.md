@@ -44,3 +44,5 @@ confirmCb | Function | null | 是 | 点击确认按钮执行的回调函数，�
 
 **dialog.hide();**
 > 隐藏 dialog
+
+## [查看demo](https://ncushujian.github.io/dialog/demo/dist/test.html)
